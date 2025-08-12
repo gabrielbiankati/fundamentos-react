@@ -1,4 +1,4 @@
-import { setCookie } from "nookies";
+import { destroyCookie, setCookie } from "nookies";
 import { createContext, ReactNode, useContext, useState } from "react";
 
 const CESUL_USER = "cesul.user";
@@ -28,7 +28,9 @@ export async function signIn({username, password}: Credentials) {
 }
 
 export async function signOut() {
-
+  destroyCookie(null, CESUL_USER, {
+      path: "/"
+  })
 }
 
 interface SessionProviderProps {
