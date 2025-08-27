@@ -1,27 +1,31 @@
 import { Flex, Group, IconButton, Image, Separator } from "@chakra-ui/react";
-import { ReactNode } from "react";
-import { IoIosMenu, IoMdHelpCircle,  IoMdMoon,  IoMdNotifications, IoMdSettings, IoMdSunny } from "react-icons/io";
+import {
+  IoIosMenu,
+  IoMdHelpCircle,
+  IoMdMoon,
+  IoMdNotifications,
+  IoMdSettings,
+  IoMdSunny,
+} from "react-icons/io";
 import { Avatar } from "@/components/ui/avatar";
 import logoPreto from "../../../public/assets/logo-preta-cesul.png";
 import logoBranco from "../../../public/assets/logo-branca-cesul.png";
 import { useColorMode } from "@/components/ui/color-mode";
+import { Logo } from "./Logo";
 
 export function DefaultHeader() {
   const { toggleColorMode, colorMode } = useColorMode();
 
   return (
-  <Flex flexDir="column" >
-      <Flex w="full"  justify="space-between" borderBottomWidth={1} py={2} px={4}>
+    <Flex flexDir="column">
+      <Flex w="full" justify="space-between" borderBottomWidth={1} py={2} px={4}
+      >
         <Flex align="center" gap={4}>
           <IconButton variant="outline">
             <IoIosMenu />
           </IconButton>
 
-            {
-              colorMode === 'dark' ?
-              <Image w="130px" h="60px" src={logoBranco.src} /> :
-              <Image w="115px" h="60px" src={logoPreto.src} />
-            }
+          <Logo />
         </Flex>
 
         <Group>
@@ -38,15 +42,18 @@ export function DefaultHeader() {
           </IconButton>
 
           <IconButton variant="ghost" rounded="full" onClick={toggleColorMode}>
-            {colorMode === 'dark' ? <IoMdMoon/> : <IoMdSunny/>}
+            {colorMode === "dark" ? <IoMdMoon /> : <IoMdSunny />}
           </IconButton>
 
           <Separator h={6} colorPalette="gray" orientation="vertical" mx={2} />
 
-          <Avatar name="Gabriel Biankati" colorPalette="purple" src="https://avatars.githubusercontent.com/u/128652887?v=4"/>
+          <Avatar
+            name="Gabriel Biankati"
+            colorPalette="purple"
+            src="https://avatars.githubusercontent.com/u/128652887?v=4"
+          />
         </Group>
       </Flex>
-
     </Flex>
   );
 }
