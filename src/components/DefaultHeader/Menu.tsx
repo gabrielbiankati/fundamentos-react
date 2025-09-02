@@ -1,4 +1,4 @@
-import { CloseButton, Drawer, IconButton, Kbd, Portal } from "@chakra-ui/react";
+import { CheckboxCard, CloseButton, Drawer, IconButton, Kbd, Portal } from "@chakra-ui/react";
 import { IoMdMenu } from "react-icons/io";
 
 export function Menu() {
@@ -19,16 +19,23 @@ export function Menu() {
             </Drawer.Header>
 
             <Drawer.Body>
-              Press the <Kbd>esc</Kbd> key to close the drawer.
+              <CheckboxCard.Root
+                defaultChecked
+                variant="subtle"
+                colorPalette="purple"
+              >
+                <CheckboxCard.HiddenInput />
+                <CheckboxCard.Control>
+                  <CheckboxCard.Label>Dashboard</CheckboxCard.Label>
+                </CheckboxCard.Control>
+              </CheckboxCard.Root>
             </Drawer.Body>
 
-            <Drawer.Footer>
-            </Drawer.Footer>
+            <Drawer.Footer></Drawer.Footer>
 
             <Drawer.CloseTrigger asChild>
               <CloseButton size="sm" />
             </Drawer.CloseTrigger>
-
           </Drawer.Content>
         </Drawer.Positioner>
       </Portal>
