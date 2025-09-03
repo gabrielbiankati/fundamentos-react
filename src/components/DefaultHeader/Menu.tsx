@@ -1,4 +1,10 @@
-import { CloseButton, Drawer, IconButton, Portal, VStack } from "@chakra-ui/react";
+import {
+  CloseButton,
+  Drawer,
+  IconButton,
+  Portal,
+  VStack,
+} from "@chakra-ui/react";
 import { IoMdMenu } from "react-icons/io";
 import { RiDashboardFill } from "react-icons/ri";
 import { NavigationItem } from "./NavigationItem";
@@ -10,6 +16,7 @@ import { AiFillFileText } from "react-icons/ai";
 import { IoCalendar } from "react-icons/io5";
 import { IoLogOut } from "react-icons/io5";
 import { useRouter } from "next/router";
+import { signOut } from "@/contexts/SessionContext";
 
 export function Menu() {
   const router = useRouter();
@@ -31,26 +38,63 @@ export function Menu() {
 
             <Drawer.Body>
               <VStack>
+                <NavigationItem
+                  icon={<RiDashboardFill />}
+                  label="Dashboard"
+                  onClick={() => router.push("/")}
+                  defaultChecked={router.asPath === '/'}
+                />
 
-              <NavigationItem icon={<RiDashboardFill />} label="Dashboard" onClick={() => router.push('/')}/>
+                <NavigationItem
+                  icon={<IoMdPeople />}
+                  label="Estudantes"
+                  onClick={() => router.push("/students")}
+                  defaultChecked={router.asPath === '/students'}
+                />
 
-              <NavigationItem icon={<IoMdPeople /> } label="Estudantes" onClick={() => router.push('/students')}/>
+                <NavigationItem
+                  icon={<FaGraduationCap />}
+                  label="Professores"
+                  onClick={() => router.push("/teachers")}
+                  defaultChecked={router.asPath === '/teachers'}
+                />
 
-              <NavigationItem icon={<FaGraduationCap />} label="Professores" onClick={() => router.push('/teachers')}/>
+                <NavigationItem
+                  icon={<FaBookOpen />}
+                  label="Cursos"
+                  onClick={() => router.push("/courses")}
+                  defaultChecked={router.asPath === '/courses'}
+                />
 
-              <NavigationItem icon={<FaBookOpen />} label="Cursos" onClick={() => router.push('/courses')}/>
+                <NavigationItem
+                  icon={<AiFillFileText />}
+                  label="Notas"
+                  onClick={() => router.push("/grades")}
+                  defaultChecked={router.asPath === '/grades'}
+                />
 
-              <NavigationItem icon={<AiFillFileText />} label="Notas" onClick={() => router.push('/grades')}/>
+                <NavigationItem
+                  icon={<FaUserPlus />}
+                  label="Matrículas"
+                  onClick={() => router.push("/enrollment")}
+                  defaultChecked={router.asPath === '/enrollment'}
+                />
 
-              <NavigationItem icon={<FaUserPlus />} label="Matrículas" onClick={() => router.push('/enrollment')}/>
-
-              <NavigationItem icon={<IoCalendar />} label="Calendário" onClick={() => router.push('/calendar')}/>
-
+                <NavigationItem
+                  icon={<IoCalendar />}
+                  label="Calendário"
+                  onClick={() => router.push("/calendar")}
+                  defaultChecked={router.asPath === '/calendar'}
+                />
               </VStack>
             </Drawer.Body>
 
             <Drawer.Footer>
-              <NavigationItem icon={<IoLogOut />} label="Sair"/>
+              <NavigationItem
+                icon={<IoLogOut />}
+                label="Sair"
+                onClick={signOut}
+              />
             </Drawer.Footer>
 
             <Drawer.CloseTrigger asChild>
