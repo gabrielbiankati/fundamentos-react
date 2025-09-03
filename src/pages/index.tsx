@@ -30,15 +30,15 @@ export default function Home() {
         <Card.Root>
           <Card.Body flexDir="row" alignItems="center" gap={6}>
             <Stat.Root>
-              <Stat.Label>Total de Professpres</Stat.Label>
+              <Stat.Label>Professores Ativos</Stat.Label>
               <Stat.ValueText>
                 <FormatNumber value={121} />
               </Stat.ValueText>
-              <Stat.UpIndicator alignSelf="start">+1% este mes</Stat.UpIndicator>
+              <Stat.UpIndicator alignSelf="start">+3% este mes</Stat.UpIndicator>
             </Stat.Root>
 
-            <Flex justify="center" align="center" backgroundColor="blue.100" rounded="lg" p={4}>
-              <Icon size="xl" color="blue.700">
+            <Flex justify="center" align="center" backgroundColor="green.100" rounded="lg" p={4}>
+              <Icon size="xl" color="green.700">
                 <IoMdPeople />
               </Icon>
             </Flex>
@@ -48,15 +48,15 @@ export default function Home() {
         <Card.Root>
           <Card.Body flexDir="row" alignItems="center" gap={6}>
             <Stat.Root>
-              <Stat.Label>Total de Estudantes</Stat.Label>
+              <Stat.Label>Cursos Oferecidos </Stat.Label>
               <Stat.ValueText>
-                <FormatNumber value={0.145} style="percent" maximumFractionDigits={2} minimumFractionDigits={2} />
+                <FormatNumber value={24} />
               </Stat.ValueText>
-              <Stat.UpIndicator alignSelf="start">+12% from last week</Stat.UpIndicator>
+              <Stat.UpIndicator alignSelf="start">+2% este mês</Stat.UpIndicator>
             </Stat.Root>
 
-            <Flex justify="center" align="center" backgroundColor="blue.100" rounded="lg" p={4}>
-              <Icon size="xl" color="blue.700">
+            <Flex justify="center" align="center" backgroundColor="purple.100" rounded="lg" p={4}>
+              <Icon size="xl" color="purple.700">
                 <IoMdPeople />
               </Icon>
             </Flex>
@@ -66,15 +66,15 @@ export default function Home() {
         <Card.Root>
           <Card.Body flexDir="row" alignItems="center" gap={6}>
             <Stat.Root>
-              <Stat.Label>Cursos Oferecidos</Stat.Label>
+              <Stat.Label>Taxa de aprovação</Stat.Label>
               <Stat.ValueText>
-                <FormatNumber value={0.145} style="percent" maximumFractionDigits={2} minimumFractionDigits={2} />
+                <FormatNumber value={0.892} style="percent" maximumFractionDigits={2} minimumFractionDigits={2} />
               </Stat.ValueText>
-              <Stat.UpIndicator alignSelf="start">+1% este mes</Stat.UpIndicator>
+              <Stat.UpIndicator alignSelf="start">+2.1% este mes</Stat.UpIndicator>
             </Stat.Root>
 
-            <Flex justify="center" align="center" backgroundColor="blue.100" rounded="lg" p={4}>
-              <Icon size="xl" color="blue.700">
+            <Flex justify="center" align="center" backgroundColor="yellow.100" rounded="lg" p={4}>
+              <Icon size="xl" color="yellow.700">
                 <IoMdPeople />
               </Icon>
             </Flex>
