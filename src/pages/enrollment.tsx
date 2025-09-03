@@ -6,7 +6,6 @@ export default function Enrollment() {
     <DefaultLayout
       title="Gestão de Matrículas"
       description="Gerencie as matriculas dos estudantes para o proximo semestre">
-      
       <Heading color={"red"}> Enrollment</Heading>
     </DefaultLayout>
  );
