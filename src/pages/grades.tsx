@@ -1,5 +1,4 @@
 import { DefaultLayout } from "@/layouts/DefaultLayout";
-import { Heading } from "@chakra-ui/react";
 
 export default function Grades() {
   return (

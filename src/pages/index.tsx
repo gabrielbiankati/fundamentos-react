@@ -1,6 +1,9 @@
+import { IndicatorCard } from "@/components/IndicatorCard";
 import { DefaultLayout } from "@/layouts/DefaultLayout";
-import { Card, Flex, FormatNumber, HStack, Icon, Stat } from "@chakra-ui/react";
-import { IoMdPeople } from "react-icons/io";
+import {  HStack } from "@chakra-ui/react";
+import { FaBook } from "react-icons/fa6";
+import { GiTeacher } from "react-icons/gi";
+import { IoMdPeople, IoMdTrendingUp } from "react-icons/io";
 
 export default function Home() {
   return (
@@ -8,78 +11,43 @@ export default function Home() {
       title="Dashboard Acadêmico"
       description="Visão geral do sistema universitário"
     >
+
       <HStack gap={6}>
-        <Card.Root>
-          <Card.Body flexDir="row" alignItems="center" gap={6}>
-            <Stat.Root>
-              <Stat.Label>Total de Estudantes</Stat.Label>
-              <Stat.ValueText>
-                <FormatNumber value={1340} />
-              </Stat.ValueText>
-              <Stat.UpIndicator alignSelf="start">+12% este mes</Stat.UpIndicator>
-            </Stat.Root>
+        <IndicatorCard
+        label="Total de Estudantes"
+        value={2847}
+        indicator="-12% este mês"
+        icon={IoMdPeople}
+        colorPallete="blue"
+        />
 
-            <Flex justify="center" align="center" backgroundColor="blue.100" rounded="lg" p={4}>
-              <Icon size="xl" color="blue.700">
-                <IoMdPeople />
-              </Icon>
-            </Flex>
-          </Card.Body>
-        </Card.Root>
+        <IndicatorCard
+        label="Professores Ativos"
+        value={121}
+        indicator="3% este mês"
+        icon={GiTeacher}
+        colorPallete="green"
+        />
 
-        <Card.Root>
-          <Card.Body flexDir="row" alignItems="center" gap={6}>
-            <Stat.Root>
-              <Stat.Label>Professores Ativos</Stat.Label>
-              <Stat.ValueText>
-                <FormatNumber value={121} />
-              </Stat.ValueText>
-              <Stat.UpIndicator alignSelf="start">+3% este mes</Stat.UpIndicator>
-            </Stat.Root>
+        <IndicatorCard
+        label="Cursos Oferecidos"
+        value={24}
+        indicator="+2% este mês"
+        icon={FaBook}
+        colorPallete="purple"
+        />
 
-            <Flex justify="center" align="center" backgroundColor="green.100" rounded="lg" p={4}>
-              <Icon size="xl" color="green.700">
-                <IoMdPeople />
-              </Icon>
-            </Flex>
-          </Card.Body>
-        </Card.Root>
+        <IndicatorCard
+        label="Taxa de aprovação"
+        value={0.892}
+        indicator="+2.1% este mês"
+        icon={IoMdTrendingUp}
+        colorPallete="yellow"
+        style="percent"
+        maximumFractionDigits={2}
+        minimumFractionDigits={2}
+        />
 
-        <Card.Root>
-          <Card.Body flexDir="row" alignItems="center" gap={6}>
-            <Stat.Root>
-              <Stat.Label>Cursos Oferecidos </Stat.Label>
-              <Stat.ValueText>
-                <FormatNumber value={24} />
-              </Stat.ValueText>
-              <Stat.UpIndicator alignSelf="start">+2% este mês</Stat.UpIndicator>
-            </Stat.Root>
-
-            <Flex justify="center" align="center" backgroundColor="purple.100" rounded="lg" p={4}>
-              <Icon size="xl" color="purple.700">
-                <IoMdPeople />
-              </Icon>
-            </Flex>
-          </Card.Body>
-        </Card.Root>
-
-        <Card.Root>
-          <Card.Body flexDir="row" alignItems="center" gap={6}>
-            <Stat.Root>
-              <Stat.Label>Taxa de aprovação</Stat.Label>
-              <Stat.ValueText>
-                <FormatNumber value={0.892} style="percent" maximumFractionDigits={2} minimumFractionDigits={2} />
-              </Stat.ValueText>
-              <Stat.UpIndicator alignSelf="start">+2.1% este mes</Stat.UpIndicator>
-            </Stat.Root>
-
-            <Flex justify="center" align="center" backgroundColor="yellow.100" rounded="lg" p={4}>
-              <Icon size="xl" color="yellow.700">
-                <IoMdPeople />
-              </Icon>
-            </Flex>
-          </Card.Body>
-        </Card.Root>
       </HStack>
     </DefaultLayout>
   );
