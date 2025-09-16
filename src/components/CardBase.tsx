@@ -4,12 +4,12 @@ import type { ColorPalette } from "@chakra-ui/react/styled-system"
 
 interface CardActivityProps {
   title: string;
-  time: string;
+  description: string;
   icon: IconType;
   colorPalette: ColorPalette;
 }
 
-export function CardBase({title, time, colorPalette, icon}: CardActivityProps) {
+export function CardBase({title, description, colorPalette, icon}: CardActivityProps) {
   return (
     <HStack gap={6} _hover={{ backgroundColor: "gray.50", rounded: "md", _dark: { backgroundColor: "gray.900" }}} p={4} >
 
@@ -19,7 +19,7 @@ export function CardBase({title, time, colorPalette, icon}: CardActivityProps) {
 
       <VStack align="start" gap={1}>
         <Heading>{title}</Heading>
-        <Text>{time}</Text>
+        <Text>{description}</Text>
       </VStack>
     </HStack>
   );

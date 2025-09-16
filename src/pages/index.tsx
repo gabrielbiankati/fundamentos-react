@@ -1,7 +1,7 @@
 import { IndicatorCard } from "@/components/IndicatorCard";
 import { CardBase } from "@/components/CardBase";
 import { DefaultLayout } from "@/layouts/DefaultLayout";
-import {  Card, ColorPalette, HStack } from "@chakra-ui/react";
+import {  Card, ColorPalette, HStack, SimpleGrid } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 import {  AiFillQuestionCircle } from "react-icons/ai";
 import { BiAward, BiCalendar } from "react-icons/bi";
@@ -78,6 +78,7 @@ const upcomingEvents = [
       title="Dashboard Acadêmico"
       description="Visão geral do sistema universitário"
     >
+      <SimpleGrid row={2}>
 
       <HStack gap={6}>
         <IndicatorCard
@@ -132,7 +133,7 @@ const upcomingEvents = [
                 colorPalette="blue"
                 icon={ActivityIcon}
                 title={activity.title}
-                time={activity.time}
+                description={activity.time}
                 />
               );
             })}
@@ -154,7 +155,7 @@ const upcomingEvents = [
                 colorPalette={event.color as ColorPalette}
                 icon={EventIcon}
                 title={event.title}
-                time={event.dateTime}
+                description={event.dateTime}
                 />
               );
             })}
@@ -162,6 +163,7 @@ const upcomingEvents = [
           </Card.Body>
         </Card.Root>
       </HStack>
+    </SimpleGrid>
     </DefaultLayout>
   );
 }
