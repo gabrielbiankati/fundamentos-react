@@ -1,11 +1,12 @@
 import { Button, Menu, Portal } from "@chakra-ui/react";
+import { CiFilter } from "react-icons/ci";
 
-export function OtherFilters() {
+export function FilterButton() {
   return (
     <Menu.Root>
       <Menu.Trigger asChild>
         <Button variant="outline" size="md">
-          Filtros
+          <CiFilter />Filtros
         </Button>
       </Menu.Trigger>
       <Portal>

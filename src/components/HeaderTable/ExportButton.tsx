@@ -1,4 +1,4 @@
-import { Button, DownloadTrigger, FormatByte } from "@chakra-ui/react";
+import { Button, DownloadTrigger } from "@chakra-ui/react";
 import { LuDownload } from "react-icons/lu";
 
 export function ExportButton() {
@@ -12,7 +12,7 @@ export function ExportButton() {
       asChild
     >
       <Button variant="outline">
-        <LuDownload />
+        <LuDownload /> Exportar
       </Button>
     </DownloadTrigger>
   );

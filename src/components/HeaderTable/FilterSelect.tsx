@@ -1,6 +1,6 @@
 import { createListCollection, Portal, Select } from "@chakra-ui/react";
 
-export function FilterStatus() {
+export function FilterSelect() {
 
     const frameworks = createListCollection({
     items: [
@@ -15,7 +15,7 @@ export function FilterStatus() {
       <Select.HiddenSelect />
       <Select.Control>
         <Select.Trigger>
-          <Select.ValueText placeholder="Status" />
+          <Select.ValueText placeholder="Todos os Status" />
         </Select.Trigger>
         <Select.IndicatorGroup>
           <Select.Indicator />

@@ -1,27 +1,13 @@
-import { ActionBar, HStack } from "@chakra-ui/react";
-import { SearchInput } from "@/components/SearchInput";
+import { HeaderTable } from "@/components/HeaderTable";
 import { DefaultLayout } from "@/layouts/DefaultLayout";
-import { FilterStatus } from "@/components/FilterStatus";
-import { OtherFilters } from "@/components/OtherFilters";
-import { ExportButton } from "@/components/ExportButton";
-import { ActionButton } from "@/components/ActionButton";
 
 export default function Students() {
   return (
     <DefaultLayout
       title="Gestão de Estudantes"
-      description="Gerencie informações do corpo docente"
+      description="Gerencie informações dos estudantes matrículados"
     >
-    <SearchInput  />
-    
-      <HStack mt="3">
-        <FilterStatus />
-        <OtherFilters />
-        <ExportButton />
-        <ActionButton />
-
-      </HStack>
+      <HeaderTable />
     </DefaultLayout>
   );
 }
-
