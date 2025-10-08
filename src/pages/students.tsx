@@ -1,4 +1,5 @@
-import { HeaderTable } from "@/components/HeaderTable";
+import { HStack} from "@chakra-ui/react";
+import { StudentsHeader } from "@/components/StudentsHeader";
 import { DefaultLayout } from "@/layouts/DefaultLayout";
 
 export default function Students() {
@@ -7,7 +8,9 @@ export default function Students() {
       title="Gestão de Estudantes"
       description="Gerencie informações dos estudantes matrículados"
     >
-      <HeaderTable />
+      <HStack>
+        <StudentsHeader />
+      </HStack>
     </DefaultLayout>
-  );
+  )
 }
